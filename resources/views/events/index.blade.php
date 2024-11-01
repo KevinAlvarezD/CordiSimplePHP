@@ -66,12 +66,12 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Selecciona todos los formularios de eliminación
+     
         const deleteForms = document.querySelectorAll('.event-delete-form');
 
         deleteForms.forEach(form => {
             form.addEventListener('submit', function(event) {
-                event.preventDefault(); // Evitar el envío inmediato del formulario
+                event.preventDefault(); 
 
                 const eventId = this.getAttribute('data-event-id');
                 Swal.fire({

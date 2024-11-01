@@ -83,7 +83,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('delete').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evitar el envío inmediato del formulario
+            event.preventDefault(); 
 
             Swal.fire({
                 title: "¿Estás seguro que quieres eliminar el evento?",
@@ -93,10 +93,9 @@
                 confirmButtonColor: "#d33",
                 denyButtonColor: "#3085d6",
             }).then((result) => {
-                if (result.isConfirmed) {
-                    // Mensaje de éxito y luego enviar el formulario
+                if (result.isConfirmed) {         
                     Swal.fire("Evento eliminado con éxito!").then(() => {
-                        this.submit(); // Enviar el formulario
+                        this.submit();
                     });
                 }
             });
