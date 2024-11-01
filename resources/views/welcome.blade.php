@@ -7,12 +7,11 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
+    
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Montserrat:wght@800&display=swap"
         rel="stylesheet">
 
-    <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
@@ -55,7 +54,6 @@
 
             #logo {
                 animation: pulse 2s ease-in-out infinite;
-                /* Animación siempre activa */
             }
 
             .nav-link {
