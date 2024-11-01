@@ -54,7 +54,6 @@
 
             #logo {
                 animation: pulse 2s ease-in-out infinite;
-                /* Animación siempre activa */
             }
 
             .nav-link {
