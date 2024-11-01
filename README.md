@@ -94,10 +94,8 @@ Here are some additional commands that might be useful during development:
 
 ## Authors: 
 
-- [Carolina Bustamante](https://www.github.com/carobte)
-- [Jonathan Escobar Molina](https://www.github.com/JEscobar07)
-- [Simón Arias Saldarriaga](https://www.github.com/SimonArias77)
-- [Luis Alejandro Londoño Valle](https://www.github.com/valeria2508)
+- [Kevin Alvarez Diaz]
+  
 
 <br>
 
