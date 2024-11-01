@@ -1,5 +1,3 @@
-Here's a more organized and simplified version of your README for CordiSimple:
-
 # CordiSimple 
 
 Before you begin, ensure you have the following installed:
