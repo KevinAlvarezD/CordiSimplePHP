@@ -12,7 +12,6 @@ class Rol extends Model
 {
     protected $table = "rols";
     public $timestamps = true;
-    // Define qué campos se pueden llenar automáticamente
     protected $fillable = [
         'name',
         'description',
