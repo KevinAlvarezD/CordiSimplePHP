@@ -9,9 +9,6 @@ use App\Models\Rol;
 
 class RolSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
 
