@@ -1,104 +1,93 @@
 # CordiSimple 
 
-CordiSimple is an event management system 
+Before you begin, ensure you have the following installed:
 
-## Prerequisites
-
-Before starting, make sure you have the following tools installed on your system:
-
-- [PHP](https://www.php.net/downloads.php) >= 8.0
+- [PHP](https://www.php.net/downloads.php) (version 8.0 or higher)
 - [Composer](https://getcomposer.org/)
 - [Node.js](https://nodejs.org/)
-- [MySQL](https://www.mysql.com/) or another compatible database system
+- [MySQL](https://www.mysql.com/) or a compatible database
 - [Git](https://git-scm.com/)
 
 ## Installation
 
 Follow these steps to set up the project locally.
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
-<code>
-- git clone https://github.com/carobte/Cordi-Simple
-<br>
-- cd Cordi-Simple
-</code>
+```bash
+git clone https://github.com/carobte/Cordi-Simple
+cd Cordi-Simple
+```
 
-### 2. Install PHP dependencies
+### 2. Install PHP Dependencies
 
-Run the following command to install the PHP dependencies:
+Run the following command:
 
-<code>
+```bash
 composer install
-</code>
+```
 
-### 3. Install JavaScript dependencies
+### 3. Install JavaScript Dependencies
 
-Run the following command to install frontend dependencies:
+Run this command to install frontend dependencies:
 
-<code>
+```bash
 npm install
-</code>
+```
 
-### 4. Configure the `.env` file
+### 4. Configure the `.env` File
 
-Edit the `.env` file to configure your database and other necessary values, remember they are on the discord channel.
+Edit the `.env` file to set up your database and other configurations. You can find necessary values in the Discord channel.
 
-<code>
-DB_CONNECTION=mysql <br>
-DB_HOST=127.0.0.1 <br>
-DB_PORT=3306 <br>
-DB_DATABASE=database_name <br>
-DB_USERNAME=username <br>
-DB_PASSWORD=password <br>
-</code>
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=database_name
+DB_USERNAME=username
+DB_PASSWORD=password
+```
 
-### 5. Compile assets
+### 5. Compile Assets
 
 To compile CSS and JavaScript files, run:
 
-<code>
+For development:
+```bash
 npm run dev
-</code>
+```
 
-Or for production build:
-
-<code>
+For production:
+```bash
 npm run build
-</code>
+```
 
-### 8. Start the development server
+### 6. Start the Development Server
 
-Run the following command to start the local server:
+Start the local server with:
 
-<code>
+```bash
 php artisan serve
-</code>
+```
 
-The server will start at `http://localhost:8000`.
+The server will be accessible at `http://localhost:8000`.
 
 ## Authentication with Breeze
 
-This project uses **Laravel Breeze** to handle basic authentication features like registration, login, and password resets.
-
-For more details on Laravel Breeze, refer to the [official documentation](https://laravel.com/docs/10.x/starter-kits#breeze).
+CordiSimple uses **Laravel Breeze** for basic authentication features such as registration, login, and password resets. For more information, refer to the [Laravel Breeze documentation](https://laravel.com/docs/10.x/starter-kits#breeze).
 
 ## Useful Commands
 
-Here are some additional commands that might be useful during development:
+Here are some additional commands that may be helpful during development:
 
-- **Migrate and seed the database**:
-  <code>
+- **Migrate and Seed the Database**:
+  ```bash
   php artisan migrate --seed
-  </code>
+  ```
 
-## Authors: 
+## Authors
 
-- [Carolina Bustamante](https://www.github.com/carobte)
-- [Jonathan Escobar Molina](https://www.github.com/JEscobar07)
-- [Simón Arias Saldarriaga](https://www.github.com/SimonArias77)
-- [Luis Alejandro Londoño Valle](https://www.github.com/valeria2508)
-
+- [Kevin Alvarez Diaz]
 <br>
 
 # Project made with Laravel
