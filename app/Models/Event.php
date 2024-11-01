@@ -12,7 +12,6 @@ class Event extends Model
 
     protected $table = "events";
     public $timestamps = true;
-    // Define qué campos se pueden llenar automáticamente
     protected $fillable = [
         'name',
         'description',

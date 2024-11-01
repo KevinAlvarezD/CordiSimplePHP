@@ -96,10 +96,9 @@
 
 
 <script>
-    //Descomentar en caso de que se necesite
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('event-create-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evitar el envío inmediato del formulario
+            event.preventDefault(); 
 
             Swal.fire({
                 title: "¿Quieres agregar este nuevo evento?",
@@ -110,7 +109,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.fire("Evento agregado con éxito!", "", "success").then(() => {
-                        this.submit(); // Enviar el formulario
+                        this.submit(); 
                     });
                 } else if (result.isDenied) {
                     Swal.fire("Se cancelo la creacion", "", "info");
