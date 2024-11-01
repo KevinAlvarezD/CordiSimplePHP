@@ -59,9 +59,7 @@
             .nav-link {
                 margin: 0 10px;
                 color: black;
-                /* Color de texto por defecto */
                 transition: color 0.3s;
-                /* Transición suave para el color */
             }
 
             .nav-link:hover {
