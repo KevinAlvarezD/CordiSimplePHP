@@ -64,7 +64,7 @@
 
             .nav-link:hover {
                 color: #FF8C20;
-                /* Color al pasar el ratón */
+                
             }
         </style>
     @endif
