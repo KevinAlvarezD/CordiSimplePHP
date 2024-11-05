@@ -2,62 +2,41 @@
 
 @section('content')
     <div class="container mx-auto py-8">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Crear una nueva reserva</h1>
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Confirmación de Reserva</h1>
 
         <div class="bg-white shadow-md rounded-lg overflow-hidden">
-            <form action="{{ route('reservations.store') }}" method="POST" id="create-reservation-form" class="px-8 py-8">
-                @csrf
-
+            <div class="px-8 py-8">
+                <!-- Mostrar detalles del evento -->
                 <div class="mb-4">
-                    <label for="event_id" class="block text-gray-700 font-bold mb-2">ID del Evento:</label>
-                    <input type="number" name="event_id" id="event_id"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                        value="{{ old('event_id') }}" required>
-                    @error('event_id')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
+                    <p class="text-xl font-semibold text-gray-800 mb-2">Detalles del Evento:</p>
+                    <p class="text-gray-700"><strong>Nombre del Evento:</strong> {{ $event->name }}</p>
+                    <p class="text-gray-700"><strong>Descripción:</strong> {{ $event->description }}</p>
+                    <p class="text-gray-700"><strong>Fecha de inicio:</strong> {{ $event->date_start }}</p>
+                    <p class="text-gray-700"><strong>Fecha de finalización:</strong> {{ $event->date_end }}</p>
+                    <p class="text-gray-700"><strong>Ubicación:</strong> {{ $event->location }}</p>
                 </div>
 
+                <!-- Mostrar detalles de la reserva (usuario) -->
                 <div class="mb-4">
-                    <label for="status" class="block text-gray-700 font-bold mb-2">Estado:</label>
-                    <select name="status" id="status"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                        required>
-                        <option value="1" {{ old('status') == 1 ? 'selected' : '' }}>Activo</option>
-                        <option value="0" {{ old('status') == 0 ? 'selected' : '' }}>Inactivo</option>
-                    </select>
-                    @error('status')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <div class="mb-4">
-                    <label for="created_at" class="block text-gray-700 font-bold mb-2">Fecha de Creación:</label>
-                    <input type="date" name="created_at" id="created_at"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                        value="{{ old('created_at') }}">
-                    @error('created_at')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <div class="mb-4">
-                    <label for="modified_at" class="block text-gray-700 font-bold mb-2">Fecha de Modificación:</label>
-                    <input type="date" name="modified_at" id="modified_at"
-                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                        value="{{ old('modified_at') }}">
-                    @error('modified_at')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
+                    <p class="text-xl font-semibold text-gray-800 mb-2">Detalles de tu Reserva:</p>
+                    <p class="text-gray-700"><strong>Usuario:</strong> {{ $user->name }}</p>
+                    <p class="text-gray-700"><strong>Correo:</strong> {{ $user->email }}</p>
                 </div>
 
                 <div class="flex justify-end">
                     <a href="{{ route('reservations.index') }}"
                         class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancelar</a>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Crear nueva
-                        reserva</button>
+                    <form action="{{ route('reservations.store') }}" method="POST" id="create-reservation-form">
+                        @csrf
+                        <input type="hidden" name="event_id" value="{{ $event->id }}">
+                        <input type="hidden" name="user_id" value="{{ $user->id }}">
+
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                            Confirmar Reserva
+                        </button>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 

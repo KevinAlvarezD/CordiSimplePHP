@@ -5,7 +5,7 @@
     <div class="min-h-screen flex flex-col items-center pt-6 ">
         <h1 class="text-3xl font-bold text-yellow-500 mb-6">Crear un nuevo evento</h1>
 
-        <div class="bg-white shadow-md rounded-lg overflow-hidden w-full sm:max-w-md bg-black">
+        <div class="shadow-md rounded-lg overflow-hidden w-full sm:max-w-md bg-black">
             <form action="{{ route('events.store') }}" method="POST" class="px-8 py-8" id="event-create-form">
                 @csrf
 
