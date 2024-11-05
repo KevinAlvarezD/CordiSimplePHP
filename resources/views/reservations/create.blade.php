@@ -1,37 +1,39 @@
 @extends('layouts.personal')
 
 @section('content')
+<body class="bg-black">
+    
     <div class="container mx-auto py-8">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Confirmación de Reserva</h1>
+        <h1 class="text-3xl font-bold text-center text-yellow-500 mb-6">Confirmación de Reserva</h1>
 
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="shadow-md rounded-lg overflow-hidden">
             <div class="px-8 py-8">
                 <!-- Mostrar detalles del evento -->
                 <div class="mb-4">
-                    <p class="text-xl font-semibold text-gray-800 mb-2">Detalles del Evento:</p>
-                    <p class="text-gray-700"><strong>Nombre del Evento:</strong> {{ $event->name }}</p>
-                    <p class="text-gray-700"><strong>Descripción:</strong> {{ $event->description }}</p>
-                    <p class="text-gray-700"><strong>Fecha de inicio:</strong> {{ $event->date_start }}</p>
-                    <p class="text-gray-700"><strong>Fecha de finalización:</strong> {{ $event->date_end }}</p>
-                    <p class="text-gray-700"><strong>Ubicación:</strong> {{ $event->location }}</p>
+                    <p class="text-xl font-semibold text-yellow-500 mb-2">Detalles del Evento:</p>
+                    <p class="text-gray-500"><strong>Nombre del Evento:</strong><span class="text-gray-300">{{ $event->name }}</span></p>
+                    <p class="text-gray-500"><strong>Descripción:</strong> <span class="text-gray-300">{{ $event->description }}</span></p>
+                    <p class="text-gray-500"><strong>Fecha de inicio:</strong><span class="text-gray-300">{{ $event->date_start }}</span> </p>
+                    <p class="text-gray-500"><strong>Fecha de finalización:</strong><span class="text-gray-300">{{ $event->date_end }}</span></p>
+                    <p class="text-gray-500"><strong>Ubicación:</strong> <span class="text-gray-300">{{ $event->location }}</span></p>
                 </div>
 
                 <!-- Mostrar detalles de la reserva (usuario) -->
                 <div class="mb-4">
-                    <p class="text-xl font-semibold text-gray-800 mb-2">Detalles de tu Reserva:</p>
-                    <p class="text-gray-700"><strong>Usuario:</strong> {{ $user->name }}</p>
-                    <p class="text-gray-700"><strong>Correo:</strong> {{ $user->email }}</p>
+                    <p class="text-xl font-semibold text-yellow-500 mb-2">Detalles de tu Reserva:</p>
+                    <p class="text-gray-700"><strong>Usuario:</strong><span class="text-gray-300">{{ $user->name }}</span> </p>
+                    <p class="text-gray-700"><strong>Correo:</strong> <span class="text-gray-300">{{ $user->email }}</span> </p>
                 </div>
 
                 <div class="flex justify-end">
                     <a href="{{ route('reservations.index') }}"
-                        class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancelar</a>
+                        class="text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancelar</a>
                     <form action="{{ route('reservations.store') }}" method="POST" id="create-reservation-form">
                         @csrf
                         <input type="hidden" name="event_id" value="{{ $event->id }}">
                         <input type="hidden" name="user_id" value="{{ $user->id }}">
 
-                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                        <button type="submit" class=" text-white px-4 py-2 rounded hover:bg-yellow-500">
                             Confirmar Reserva
                         </button>
                     </form>
@@ -61,3 +63,4 @@
         </div>
     @endif
 @endsection
+</body>
