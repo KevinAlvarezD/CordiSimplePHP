@@ -33,12 +33,12 @@ class EventCancelledNotification extends Notification
     {
         // Suponiendo que el evento es un objeto con una propiedad "name"
         return (new MailMessage)
-            ->subject('¡Lo sentimos! El evento ha sido cancelado')
-            ->greeting('¡Hola!')
-            ->line('Lamentamos informarte que el evento "' . $this->event->name . '" ha sido cancelado.')
-            ->line('Sabemos lo importante que es este evento para ti, y te pedimos disculpas por los inconvenientes.')
+            ->subject('Lamentablemente, el evento ha sido cancelado')
+            ->greeting('Estimado/a,')
+            ->line('Nos entristece informarte que el evento "' . $this->event->name . '" ha sido cancelado.')
+            ->line('Entendemos la importancia de este evento para ti y te pedimos disculpas por cualquier inconveniente que esto pueda causar.')
             ->action('Ver detalles del evento', route('events.index'))
-            ->salutation('¡Gracias por tu comprensión!');
+            ->salutation('Gracias por tu comprensión y paciencia.');
     }
 
     /**

@@ -26,10 +26,20 @@
                 <p class="text-gray-500">Capacidad: <span class="text-white">{{ $reservation->event->max_slots }}</span></p>
                 <p class="text-gray-500">Estado: <span class="text-white">{{ $reservation->event->status ? 'activo' : 'inactivo' }}</span></p>
                 <p class="text-gray-500">Tu estado de reserva: <span class="text-white">{{ $reservation->status ? 'Confirmado' : 'Pendiente' }}</span></p>
+
+                {{-- Mostrar el botón de cancelar solo si es el propietario de la reserva o si es admin --}}
+                @if (auth()->user()->rols_id == 1 || auth()->user()->id === $reservation->user_id)
+                    <form action="{{ route('reservations.destroy', $reservation->id) }}" method="POST" class="mt-4">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-white px-4 py-2 rounded bg-red-500 hover:bg-red-600">
+                            Cancelar Reserva
+                        </button>
+                    </form>
+                @endif
             </div>
         @empty
         <div class="flex items-center justify-center h-full text-center text-gray-500">No tienes reservas realizadas.</div>
-        
         @endforelse
     </div>
 
