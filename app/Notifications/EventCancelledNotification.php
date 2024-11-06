@@ -37,8 +37,7 @@ class EventCancelledNotification extends Notification
             ->greeting('Estimado/a,')
             ->line('Nos entristece informarte que el evento "' . $this->event->name . '" ha sido cancelado.')
             ->line('Entendemos la importancia de este evento para ti y te pedimos disculpas por cualquier inconveniente que esto pueda causar.')
-            ->action('Ver detalles del evento', route('events.index'))
-            ->salutation('Gracias por tu comprensión y paciencia.');
+            ->salutation('Gracias por tu comprensión.');
     }
 
     /**
