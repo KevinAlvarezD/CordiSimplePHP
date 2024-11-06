@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::put('events/{id}', [EventController::class, 'update'])->name('events.update');
     Route::delete('events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
     
+
     // Reservation Routes
     Route::get('reservations', [ReservationController::class, 'index'])->name('reservations.index');
     Route::get('/reservations/create/{event_id}', [ReservationController::class, 'create'])->name('reservations.create');

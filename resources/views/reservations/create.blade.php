@@ -26,8 +26,12 @@
                 </div>
 
                 <div class="flex justify-end">
-                    <a href="{{ route('reservations.index') }}"
-                        class="text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancelar</a>
+                    <!-- Mostrar solo para usuarios comunes, no para administradores -->
+                    @if (auth()->user()->rols_id == 2)
+                        <a href="{{ route('reservations.index') }}"
+                            class="text-white px-4 py-2 rounded hover:bg-gray-600 mr-2">Cancelar</a>
+                    @endif
+
                     <form action="{{ route('reservations.store') }}" method="POST" id="create-reservation-form">
                         @csrf
                         <input type="hidden" name="event_id" value="{{ $event->id }}">
